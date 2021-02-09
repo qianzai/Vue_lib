@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue的事件使用</title>
+  </head>
+  <body>
+    <!--
+            1.页面中提供按钮
+            2.按钮绑定单击事件  onclick  onmouseover onmove  onkeyup ...
+            3.在单击事件中修改年龄的值 同时渲染页面
+        -->
+    <div id="app">
+      <h2>{{msg}}</h2>
+      <h2>年龄：{{age}}</h2>
+
+      <input type="button" value="增加年龄" v-on:click="changeage" />
+    </div>
+
+    <!--引入vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello 学习!",
+          age: 23,
+        },
+        methods: {
+          //methods 用来定义vue中时间
+          changeage: function () {
+            // alert('单击触发')
+            // console.log(this);
+            // this.age = this.age + 1;
+            this.age++;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

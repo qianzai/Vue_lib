@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>02. vue_data 定义对象 数组 其他数据类型</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3>{{ msg }}</h3>
+      <h3>名称:{{ user.name }} 信息:{{user.msg}}</h3>
+      <h3>年龄: {{ age }}</h3>
+
+      <h3>{{ lists[0] }}---{{ lists[1] }}----{{ lists[2] }}</h3>
+
+      <h3>{{ users[0].name }}</h3>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello vue",
+          user: { name: "千曦诺", msg: "hello !!!" },
+          age: 23,
+          lists: ["千一", "千二", "千三"],
+          users: [
+            { name: "小黑", age: 18 },
+            { name: "小白", age: 20 },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

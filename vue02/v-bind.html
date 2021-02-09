@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:v-on="http://www.w3.org/1999/xhtml"
+  xmlns:v-bind="http://www.w3.org/1999/xhtml"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue的v-bind使用</title>
+
+    <style>
+      .aa {
+        border: 2px red solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <img width="300" :title="msg" :class="{aa:showCss}" :src="src" alt="" />
+
+      <input type="button" value="动态控制加入样式" @click="addCss" />
+
+      <input type="button" value="改变图片" @click="changeSrc" />
+    </div>
+    <!--引入vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          msg: "随机图片!!!!",
+          showCss: true,
+          src: "https://api.mz-moe.cn/img.php",
+        },
+        methods: {
+          addCss() {
+            this.showCss = !this.showCss;
+          },
+          changeSrc() {
+            this.src =
+              "https://bzm.ink/upload/2021/02/d5-0a0d5ba5f0e84f4db4650b58c2f086d8.png";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
