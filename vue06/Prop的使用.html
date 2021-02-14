@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>12.3.1 Prop的使用接收静态数据</title>
+  </head>
+  <body>
+    <div id="app">
+      <login user-name="千仔" age="23"></login>
+    </div>
+    <template id="login">
+      <div>
+        <h1>欢迎:{{userName}},年龄:{{age}}</h1>
+      </div>
+    </template>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      let login = {
+        template: "#login",
+        props: ["userName", "age"] /*静态数据传递*/,
+      };
+      const app = new Vue({
+        el: "#app",
+        data: {},
+        methods: {},
+        components: {
+          login,
+        },
+      });
+    </script>
+  </body>
+</html>
