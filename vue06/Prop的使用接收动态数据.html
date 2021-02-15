@@ -2,15 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>12.3.1 Prop的使用接收静态数据</title>
+    <title>Prop的使用接收动态数据</title>
   </head>
   <body>
     <div id="app">
-      <login user-name="千仔" age="23"></login>
+      <!--使用组件-->
+      <login :name="username" :age="age"></login>
     </div>
     <template id="login">
       <div>
-        <h1>欢迎:{{userName}},年龄:{{age}}</h1>
+        <h1>欢迎:{{name}},年龄:{{age}}</h1>
       </div>
     </template>
     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
@@ -18,11 +19,14 @@
     <script>
       let login = {
         template: "#login",
-        props: ["userName", "age"] /*静态数据传递*/,
+        props: ["name", "age"] /*静态数据传递*/,
       };
       const app = new Vue({
         el: "#app",
-        data: {},
+        data: {
+          username: "千仔",
+          age: 18,
+        },
         methods: {},
         components: {
           login,

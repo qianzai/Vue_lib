@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>12.4.2.组件中事件定义</title>
+  </head>
+  <body>
+    <div id="app">
+      <login></login>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const login = {
+        template:
+          '<div><input type="button" value="点我" @click="change"></div>',
+        data() {
+          return {
+            name: "小千",
+          };
+        },
+        methods: {
+          change() {
+            alert(this.name), alert("触发事件");
+          },
+        },
+      };
+      const app = new Vue({
+        el: "#app",
+        data: {},
+        methods: {},
+        components: {
+          login,
+        },
+      });
+    </script>
+  </body>
+</html>
