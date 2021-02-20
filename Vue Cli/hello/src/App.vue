@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <router-view/>  //显示路由
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
+export default {  //暴露当前组件对象
+  name: 'App',
+  data() {
+    return { }
+  },
+  methods: { },
+  components: { }
 }
 </script>
 
