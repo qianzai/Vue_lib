@@ -5,7 +5,6 @@
 </template>
 
 <script>
-User
     export default {
         name: ""
     }
